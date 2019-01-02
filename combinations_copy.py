@@ -3,14 +3,13 @@ import random
 cards = ['2:', '3:', '4:', '5:', '6:', '7:', '8:', '9:', '10:', 'J:', 'Q:', 'K:', 'A:']
 suites = ['♥', '♠', '♣', '♦']
 card_stack = []
-desk = {}
-hand = {}
+
 
 def cards_defined():
 
     def random_card():
         random_card = random.choice(cards) + random.choice(suites)
-        return random_card
+        return random_card.split(':')
 
     def duplicate_check(arg_list):
         for element in arg_list:
@@ -26,8 +25,25 @@ def cards_defined():
     #hand.extend(card_stack[5:7])
 
 
+cards_defined()
+
+desk = list(card_stack[0:5])
+hand = list(card_stack[5:7])
+
+def pair():
+    
+
+def combination_check():
+    pass
 
 
+print(card_stack)
+print(desk)
+print(hand)
+
+
+
+"""
 def cards_choose(call):
     if 'init_flop' in call:
         return card_stack[0:3]
@@ -38,20 +54,7 @@ def cards_choose(call):
     elif 'give_hand' in call:
         return card_stack[5:7]
 
-
-
-cards_defined()
-
-def combination_check():
-    pass
-
-
-print(cards_choose('init_flop'))
-print(cards_choose('init_turn'))
-print(cards_choose('init_river'))
-print(cards_choose('give_hand'))
-
-
+"""
 
 
 
